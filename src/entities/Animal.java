@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
 	// La classe Animal sarà la classe PADRE
 	// In questa classe andrò ad inserire tutte le caratteristiche comuni a tutti gli animali
 
@@ -17,9 +17,19 @@ public class Animal {
 		this.age = age;
 	}
 
-
 	// Lista metodi
+	// Nelle classi astratte posso inserire sia metodi CONCRETI che metodi ASTRATTI
 
+	// METODI ASTRATTI
+	// I metodi astratti sono dei metodi 'vuoti' che servono per obbligare i figli ad avere un certo
+	// metodo
+	// Ogni figlio deciderà come implementare tale metodo facendone un @Override
+	// Questo mi garantirà quindi che ogni figlio avrà con certezza un metodo fatto così
+	public abstract void getInfo();
+
+	// METODI CONCRETI
+	// I metodi concreti vengono ereditati dai figli e questi possono decidere o di usarli per come sono
+	// oppure di sovrascriverli facendo un @Override
 	public void sayYourName() {
 		System.out.println("Ciao sono un animale e mi chiamo " + this.name);
 	}

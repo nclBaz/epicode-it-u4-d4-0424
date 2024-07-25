@@ -1,6 +1,8 @@
 package entities;
 
-public class Cat extends Animal {
+import interfaces.Jumper;
+
+public class Cat extends Animal implements Jumper {
 	// Cat è FIGLIO di Animal
 	// Ciò significa che eredita name, age ed i metodi dal padre
 	// Eventualmente possiamo anche aggiungere ulteriori attributi/metodi
@@ -36,5 +38,17 @@ public class Cat extends Animal {
 
 	public void walk(int numPassi) { // OVERLOAD DI METODO
 		System.out.println("Sono un gatto e camminerò per " + numPassi + " passi");
+	}
+
+	@Override
+	public void getInfo() {
+		System.out.println("Il mio nome è " + this.name);
+		System.out.println("La mia età è " + this.age);
+		System.out.println("Ho gli stivali? " + this.hasBoots);
+	}
+
+	@Override
+	public void jump(int cm) {
+		System.out.println("Ciao sono un gatto e ora salterò di " + cm + " cm");
 	}
 }
